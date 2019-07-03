@@ -1,0 +1,37 @@
+<div style="text-align:center">
+    <h1>
+        Prueba técnica FullStack Angular y Java!
+    </h1>
+</div>
+<div class="container">
+    <div class="starter-template">
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Número de documento</label>
+                        <input type="text" formControlName="documentnumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.documentnumber.errors }" />
+                        <div *ngIf="submitted && f.documentnumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.documentnumber.errors.required">Por favor, ingresa el número de documento</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Por favor, ingresa el nombre</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <section class="credito">
+        <div align="center">
+            &copy; Marinellys Figueroa
+        </div>
+    </section>
+    <router-outlet></router-outlet>
