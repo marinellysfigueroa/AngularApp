@@ -4,6 +4,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule} from '@angular/common/http';
+import { testApiService} from './services/testapi.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { AppComponent } from './app.component';
     NgbModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [testApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
